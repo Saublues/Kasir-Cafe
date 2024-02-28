@@ -36,7 +36,7 @@
         <input type="hidden" name="tglawal" value=<?= $tglawal ?>>
         <input type="hidden" name="tglakhir" value=<?= $tglakhir ?>>
         <button onclick="PrintLaporan()" class="btn btn-dark btn-flat">
-          <i class="fas fa-file"></i> Print Laporan
+          <i class="fas fa-file"></i> Print Laporan based on Date
         </button>
       </form>
     </div>

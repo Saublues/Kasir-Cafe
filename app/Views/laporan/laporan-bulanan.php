@@ -39,7 +39,7 @@
             <form action="/laporan/printMonth" method="post" target="_blank">
                 <input type="hidden" name="tglawal" value=<?= $tglawal ?>>
                 <button onclick="PrintLaporan()" class="btn btn-dark btn-flat">
-                    <i class="fas fa-file"></i> Print Laporan
+                    <i class="fas fa-file"></i> Print Laporan based on Month
                 </button>
             </form>
         </div>
