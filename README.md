@@ -1,3 +1,7 @@
+# LOGIN
+username : 505
+password : 123
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
