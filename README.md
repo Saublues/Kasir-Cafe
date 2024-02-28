@@ -1,5 +1,4 @@
 # Administrator
-## User
 username : 505
 password : 123
 
