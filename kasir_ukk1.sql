@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2024 at 01:45 AM
+-- Generation Time: Mar 01, 2024 at 04:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,8 +18,31 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kasir_ukk`
+-- Database: `kasir_ukk1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detailpenjualan`
+--
+
+CREATE TABLE `detailpenjualan` (
+  `id_detail` int(11) NOT NULL,
+  `nama_menu` varchar(50) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `subtotal` int(11) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `detailpenjualan`
+--
+
+INSERT INTO `detailpenjualan` (`id_detail`, `nama_menu`, `qty`, `harga`, `subtotal`, `tanggal`) VALUES
+(1, 'es oyenss', 2, 15000, 30000, '2024-03-01'),
+(2, 'es campur', 1, 10000, 10000, '2024-03-01');
 
 -- --------------------------------------------------------
 
@@ -38,8 +61,7 @@ CREATE TABLE `kategori` (
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 (0, 'cemilan'),
-(2, 'makanan'),
-(1, 'minuman');
+(2, 'makanan');
 
 -- --------------------------------------------------------
 
@@ -84,10 +106,8 @@ CREATE TABLE `penjualan` (
 --
 
 INSERT INTO `penjualan` (`id_penjualan`, `id_user`, `tanggal_jual`, `jam`, `total_harga`, `uang`, `uang_kembali`) VALUES
-(30, 505, '2024-02-27', '09:54:48', 30000, 30000, 0),
-(31, 505, '2024-03-27', '09:59:35', 25000, 30000, 5000),
-(32, 505, '2024-04-28', '10:11:32', 15000, 50000, 35000),
-(33, 505, '2024-03-01', '07:23:46', 10000, 20000, 10000);
+(4, 505, '2024-03-01', '09:23:14', 40000, 40000, 0),
+(5, 505, '2024-03-01', '09:32:32', 40000, 40000, 0);
 
 -- --------------------------------------------------------
 
@@ -112,6 +132,12 @@ INSERT INTO `user` (`id_user`, `fullname`, `password`, `level`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `detailpenjualan`
+--
+ALTER TABLE `detailpenjualan`
+  ADD PRIMARY KEY (`id_detail`);
 
 --
 -- Indexes for table `kategori`
@@ -144,6 +170,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `detailpenjualan`
+--
+ALTER TABLE `detailpenjualan`
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
@@ -153,7 +185,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
