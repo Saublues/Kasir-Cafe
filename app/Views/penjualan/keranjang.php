@@ -144,6 +144,13 @@
                         <label class="font-weight-bold">Kembali</label>
                         <input type="text" name="kembali" id="kembali" class="form-control" readonly>
                     </div>
+                    <?php foreach ($cart->contents() as $key => $value) { ?>
+                        <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                        <input type="hidden" name="qty" value="<?= $value['qty'] ?>">
+                        <input type="hidden" name="harga" value="<?= $value['price'] ?>">
+                        <input type="hidden" name="nama_menu" value="<?= $value['name'] ?>">
+                        <input type="hidden" name="subtotal" value="<?= $value['subtotal'] ?>">
+                    <?php } ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

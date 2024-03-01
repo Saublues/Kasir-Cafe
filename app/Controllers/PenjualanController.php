@@ -7,6 +7,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Penjualan;
 use App\Models\Menu;
 use App\Models\User;
+use App\Models\Detail;
 use CodeIgniter\I18n\Time;
 
 
@@ -115,17 +116,37 @@ class PenjualanController extends BaseController
     {
         $cart = \Config\Services::cart();
         $penjualan = new Penjualan;
+        foreach ($cart->contents() as $key => $value) {
+
+            $isi =  [
+                'id' => $value['id'],
+                'qty' => $value['qty'],
+                'harga' => $value['price'],
+                'nama_menu' => $value['name'],
+                'subtotal' => $value['subtotal'],
+                'tanggal' => $this->request->getPost('tanggal')
+            ];
+            $detail = new Detail;
+            $detail->insert($isi);
+        }
         $data = [
             'id_user' => $this->request->getPost('kasir'),
             'total_harga' => $this->request->getPost('total'),
             'tanggal_jual' => $this->request->getPost('tanggal'),
             'jam' => $this->request->getPost('jam'),
             'uang' => $this->request->getPost('uang'),
-            'uang_kembali' => $this->request->getPost('kembali')
+            'uang_kembali' => $this->request->getPost('kembali'),
         ];
         $penjualan->ignore(true)->insert($data);
-        $cart->destroy();
+        // $cart->destroy();
         session()->setFlashdata('pesan1', 'Berhasil dibayar');
         return redirect()->to('/penjualan/keranjang');
+    }
+
+    public function detail()
+    {
+        $dataDetail = new Detail();
+        $data['listDetail'] = $dataDetail->findAll();
+        return view('/penjualan/detail-penjualan', $data);
     }
 }

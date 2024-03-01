@@ -67,6 +67,12 @@
                  </div>
              </div>
          </li>
+
+         <li class="nav-item" data-url="/penjualan/detail">
+             <a class="nav-link" href="/penjualan/detail">
+                 <i class="fas fa-fw fa-file-alt"></i>
+                 <span>Detail Penjualan</span></a>
+         </li>
      <?php } ?>
 
      <!-- laporan -->

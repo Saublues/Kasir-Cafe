@@ -15,7 +15,7 @@
                 echo ' </div>';
             }
             if (session()->getFlashdata('delete')) {
-                echo '<div class="alert alert-danger" role="alert"> Kategori telah ditambahkan';
+                echo '<div class="alert alert-danger" role="alert"> Kategori telah dihapus';
                 session()->getFlashdata('delete');
                 echo ' </div>';
             }

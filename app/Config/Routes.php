@@ -51,6 +51,8 @@ $routes->post('/penjualan/update', 'PenjualanController::update', ['filter' => '
 $routes->get('/penjualan/keranjang', 'PenjualanController::keranjang', ['filter' => 'otentifikasi']);
 $routes->get('/penjualan/reset', 'PenjualanController::reset', ['filter' => 'otentifikasi']);
 $routes->post('/penjualan/pembayaran', 'PenjualanController::pembayaran', ['filter' => 'otentifikasi']);
+$routes->get('/penjualan/detail', 'PenjualanController::detail', ['filter' => 'otentifikasi']);
+
 
 //routes laporan
 $routes->get('/laporan/tampil', 'LaporanController::tampil', ['filter' => 'otentifikasi']);
