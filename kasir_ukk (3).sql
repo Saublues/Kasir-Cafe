@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2024 at 04:12 PM
+-- Generation Time: Mar 01, 2024 at 01:45 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -37,7 +37,7 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-(0, 'cemilan kali'),
+(0, 'cemilan'),
 (2, 'makanan'),
 (1, 'minuman');
 
@@ -85,7 +85,9 @@ CREATE TABLE `penjualan` (
 
 INSERT INTO `penjualan` (`id_penjualan`, `id_user`, `tanggal_jual`, `jam`, `total_harga`, `uang`, `uang_kembali`) VALUES
 (30, 505, '2024-02-27', '09:54:48', 30000, 30000, 0),
-(31, 505, '2024-02-27', '09:59:35', 25000, 30000, 5000);
+(31, 505, '2024-03-27', '09:59:35', 25000, 30000, 5000),
+(32, 505, '2024-04-28', '10:11:32', 15000, 50000, 35000),
+(33, 505, '2024-03-01', '07:23:46', 10000, 20000, 10000);
 
 -- --------------------------------------------------------
 
@@ -151,7 +153,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Constraints for dumped tables
